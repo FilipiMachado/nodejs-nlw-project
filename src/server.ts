@@ -4,6 +4,7 @@ import express from "express";
 const app = express();
 
 /*
+    Methods:
 - GET    => Buscar uma informação
 - POST   => Inserir (criar) uma informação
 - PUT    => Alterar uma informação
@@ -11,7 +12,18 @@ const app = express();
 - PATCH  => Alterar uma informação específica
 */
 
-app.get("/teste", (request, response) => {
+/* 
+    Tipos de Parâmetros
+- Routes Params => http://localhost:3000/produtos/ 4184847842 (id)
+- Query Params  => http://localhost:3000/produtos/?name=telado&description=tecladonice&...
+
+- Body Params (POST, PUT e PATCH)   => {
+    "name": "teclado",
+    "description": "teclado nice"
+}
+*/
+
+app.get("/teste/{id}", (request, response) => {
   // Request  => Entrando
   // Response => Saindo
   return response.send("Hello Bagual!");
