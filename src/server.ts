@@ -14,6 +14,11 @@ const app = express();
 app.get("/teste", (request, response) => {
   // Request  => Entrando
   // Response => Saindo
+  return response.send("Hello Bagual!");
+});
+
+app.post("/teste-post", (request, response) => {
+  return response.send("Hello bagual com post method!");
 });
 
 //http://localhost:3000
